@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth overflow-x-hidden">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0f1d" />
+  <meta name="2879bf11fee4cd072fd51a486a4a19c5908b0625" content="2879bf11fee4cd072fd51a486a4a19c5908b0625" />
+  <meta name="referrer" content="no-referrer-when-downgrade" />
+  <title>NexusMods Hub - Verified Mobile & PC Mod Vault</title>
+  
+  <!-- Preconnect and Google Fonts (Inter & JetBrains Mono) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- ==================================================================== -->
+  <!-- 📢 HILLTOPADS SLOT: POPUNDER / ONCLICK SCRIPT (Insert in Head)       -->
+  <!-- Paste your HilltopAds Popunder tag code below                        -->
+  <!-- ==================================================================== -->
+  <!-- <script type="text/javascript" src="//your-hilltopads-popunder-domain.com/popunder-zone-id.js"></script> -->
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        screens: {
+          'xs': '375px',
+          'sm': '640px',
+          'md': '768px',
+          'lg': '1024px',
+          'xl': '1280px',
+          '2xl': '1536px',
+        },
+        extend: {
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            slate: {
+              750: '#26334a',
+              850: '#111827',
+              900: '#0f172a',
+              950: '#0a0f1d',
+            },
+            brand: {
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Zero horizontal overflow and smooth touch scrolling */
+    html, body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+
+    /* Enterprise Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0a0f1d;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #334155;
+    }
+
+    /* Hide scrollbar for mobile touch horizontal swipe lists */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .ad-pattern {
+      background-color: #0b1120;
+      background-image: radial-gradient(#1e293b 1px, transparent 1px);
+      background-size: 14px 14px;
+    }
+
+    .glass-header {
+      background: rgba(10, 15, 29, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    /* Modal Mobile Safe Backdrop */
+    .modal-backdrop {
+      overscroll-behavior: contain;
+    }
+  </style>
+</head>
+
+<body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen selection:bg-brand-600 selection:text-white pb-20 sm:pb-16">
+
+  <!-- Main Sticky Header (Without top notification bar) -->
+  <nav class="sticky top-0 z-40 glass-header border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-14 sm:h-16 gap-2">
+        
+        <!-- Platform Brand Logo -->
+        <div class="flex items-center space-x-2.5 cursor-pointer flex-shrink-0" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+          <div class="flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-brand-600 text-white shadow-sm flex-shrink-0">
+            <i data-lucide="layers" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-1">
+              <span class="text-base sm:text-lg font-bold tracking-tight text-white">Nexus<span class="text-brand-500">Mods</span></span>
+              <span class="text-[9px] font-semibold px-1 py-0.2 rounded bg-slate-800 text-slate-300 border border-slate-700">Hub</span>
+            </div>
+            <p class="text-[10px] text-slate-400 font-medium -mt-1 hidden xs:block">Verified APK Vault</p>
+          </div>
+        </div>
+
+        <!-- Desktop Search Bar -->
+        <div class="hidden md:flex flex-1 max-w-md mx-4 lg:mx-8 relative">
+          <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+            <i data-lucide="search" class="w-4 h-4"></i>
+          </div>
+          <input 
+            type="text" 
+            id="desktop-search-input"
+            oninput="handleSearch(this.value)"
+            placeholder="Search verified packages (Free Fire, GTA, CapCut)..." 
+            class="w-full pl-10 pr-10 py-2 rounded-lg bg-slate-900 border border-slate-800 focus:border-brand-600 focus:ring-1 focus:ring-brand-600 focus:outline-none text-xs sm:text-sm text-slate-200 placeholder-slate-500 transition-colors"
+          />
+          <button id="clear-search-btn-desk" onclick="clearSearch()" class="hidden absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-white">
+            <i data-lucide="x" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+        <!-- Mobile & Tablet Action Links -->
+        <div class="flex items-center space-x-2">
+          <button 
+            onclick="scrollToMods()"
+            class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold text-slate-200 bg-slate-900 hover:bg-slate-850 border border-slate-800 transition-colors min-h-[38px] active:scale-95"
+          >
+            <i data-lucide="compass" class="w-3.5 h-3.5 text-brand-500"></i>
+            <span class="hidden xs:inline">Browse Vault</span>
+            <span class="xs:hidden">Browse</span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Mobile Search Field (Expands cleanly below header on phones) -->
+      <div class="md:hidden pb-2.5 pt-0.5 relative">
+        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+          <i data-lucide="search" class="w-3.5 h-3.5"></i>
+        </div>
+        <input 
+          type="text" 
+          id="mobile-search-input"
+          oninput="handleSearch(this.value)"
+          placeholder="Search Free Fire, GTA, Tools..." 
+          class="w-full pl-9 pr-9 py-2 rounded-lg bg-slate-900 border border-slate-800 focus:border-brand-600 focus:outline-none text-xs text-slate-200 placeholder-slate-500"
+        />
+        <button id="clear-search-btn-mob" onclick="clearSearch()" class="hidden absolute inset-y-0 right-0 pr-2.5 flex items-center text-slate-400 hover:text-white">
+          <i data-lucide="x" class="w-3.5 h-3.5"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================================================================== -->
+  <!-- 📢 HILLTOPADS SLOT 1: TOP BANNER (Auto 320x50 Mobile / 728x90 Desktop)-->
+  <!-- ==================================================================== -->
+  <div class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 pt-3 sm:pt-4">
+    <div class="rounded-xl border border-slate-800 bg-slate-900/60 ad-pattern p-2 sm:p-3 transition-colors hover:border-slate-750">
+      <div class="flex items-center justify-between px-1 mb-1.5 text-[9px] sm:text-[10px] uppercase tracking-wider text-slate-500 font-mono">
+        <span class="flex items-center gap-1.5"><i data-lucide="info" class="w-3 h-3 text-slate-400"></i> HILLTOPADS BANNER</span>
+        <span class="px-1.5 py-0.5 rounded bg-slate-800 text-[8px] sm:text-[9px] text-slate-400 border border-slate-750">320x50 / 728x90</span>
+      </div>
+
+      <!-- HilltopAds Banner Responsive Container -->
+      <div id="hilltop-header-banner" class="w-full min-h-[52px] sm:min-h-[80px] flex items-center justify-between px-3 sm:px-5 py-2 sm:py-3 rounded-lg bg-slate-900 border border-slate-800 text-left gap-2 sm:gap-4 overflow-hidden">
+        <div class="flex items-center space-x-2.5 sm:space-x-3.5 min-w-0">
+          <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-brand-600/10 text-brand-500 border border-brand-500/20 flex items-center justify-center font-bold text-sm sm:text-base flex-shrink-0">
+            <i data-lucide="shield" class="w-4 h-4 sm:w-5 sm:h-5 text-brand-500"></i>
+          </div>
+          <div class="min-w-0">
+            <p class="font-semibold text-xs sm:text-sm text-slate-200 truncate">Gaming VPN & Latency Optimizer</p>
+            <p class="text-[10px] sm:text-xs text-slate-400 truncate">Reduce packet loss & bypass ISP restrictions instantly.</p>
+          </div>
+        </div>
+        <a 
+          href="javascript:void(0)" 
+          onclick="triggerHilltopDirectLink()" 
+          class="px-2.5 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-xs font-semibold bg-brand-600 text-white rounded-lg hover:bg-brand-500 transition-colors whitespace-nowrap shadow-sm flex-shrink-0 active:scale-95"
+        >
+          Check Now &rarr;
+        </a>
+      </div>
+      
+      <!-- HilltopAds Official JavaScript Banner Code Placeholder -->
+      <!-- <div id="hilltopads_banner_zone_XXXXX"></div> -->
+      <!-- <script type="text/javascript" src="//your-hilltopads-domain.com/banner-zone.js"></script> -->
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 pt-6 sm:pt-10 pb-6 sm:pb-8">
+    <div class="text-center max-w-3xl mx-auto">
+      
+      <div class="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 py-1 rounded-full bg-slate-900 border border-slate-800 text-slate-300 text-[11px] sm:text-xs font-medium mb-3">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+        Zero Malware Guarantee • 100% VirusTotal Tested
+      </div>
+
+      <h1 class="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
+        Verified Mobile & PC <span class="text-brand-500">Application Vault</span>
+      </h1>
+
+      <p class="mt-2.5 sm:mt-4 text-xs sm:text-sm md:text-base text-slate-400 font-normal leading-relaxed px-1">
+        Download clean, tested, and high-performance mod packages. Audited package signatures mirrored across high-speed CDNs.
+      </p>
+
+      <!-- Trust Metrics (Mobile 2-columns, Desktop 4-columns) -->
+      <div class="mt-5 sm:mt-8 grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 text-left">
+        <div class="p-2.5 sm:p-3 rounded-lg bg-slate-900 border border-slate-800">
+          <div class="text-emerald-400 font-bold text-[11px] sm:text-xs flex items-center gap-1.5 mb-0.5">
+            <i data-lucide="check-circle" class="w-3.5 h-3.5 flex-shrink-0"></i> 0/68 Detections
+          </div>
+          <p class="text-[10px] sm:text-[11px] text-slate-400">VirusTotal Clean</p>
+        </div>
+
+        <div class="p-2.5 sm:p-3 rounded-lg bg-slate-900 border border-slate-800">
+          <div class="text-brand-500 font-bold text-[11px] sm:text-xs flex items-center gap-1.5 mb-0.5">
+            <i data-lucide="zap" class="w-3.5 h-3.5 flex-shrink-0"></i> Fast Mirrors
+          </div>
+          <p class="text-[10px] sm:text-[11px] text-slate-400">Unthrottled Bandwidth</p>
+        </div>
+
+        <div class="p-2.5 sm:p-3 rounded-lg bg-slate-900 border border-slate-800">
+          <div class="text-slate-200 font-bold text-[11px] sm:text-xs flex items-center gap-1.5 mb-0.5">
+            <i data-lucide="shield" class="w-3.5 h-3.5 text-blue-400 flex-shrink-0"></i> No Adware
+          </div>
+          <p class="text-[10px] sm:text-[11px] text-slate-400">Clean Package Roots</p>
+        </div>
+
+        <div class="p-2.5 sm:p-3 rounded-lg bg-slate-900 border border-slate-800">
+          <div class="text-slate-200 font-bold text-[11px] sm:text-xs flex items-center gap-1.5 mb-0.5">
+            <i data-lucide="refresh-cw" class="w-3.5 h-3.5 text-emerald-400 flex-shrink-0"></i> Daily Sync
+          </div>
+          <p class="text-[10px] sm:text-[11px] text-slate-400">Latest Builds Online</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Categories Filter Section (Smooth Touch Horizontal Scrolling on Mobile) -->
+  <section class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 mb-4 sm:mb-6">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 sm:pb-4 border-b border-slate-800">
+      
+      <!-- Category Pills with Touch Pan -->
+      <div class="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar py-1 -mx-3.5 px-3.5 sm:mx-0 sm:px-0 touch-pan-x" id="category-pills">
+        <button onclick="setCategory('all')" data-cat="all" class="cat-pill active px-3 sm:px-3.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap bg-brand-600 text-white transition-colors min-h-[36px] flex items-center">
+          All Mods (<span id="count-all">8</span>)
+        </button>
+        <button onclick="setCategory('Shooters')" data-cat="Shooters" class="cat-pill px-3 sm:px-3.5 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 transition-colors min-h-[36px] flex items-center">
+          Shooters
+        </button>
+        <button onclick="setCategory('Action')" data-cat="Action" class="cat-pill px-3 sm:px-3.5 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 transition-colors min-h-[36px] flex items-center">
+          Action
+        </button>
+        <button onclick="setCategory('Utility')" data-cat="Utility" class="cat-pill px-3 sm:px-3.5 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 transition-colors min-h-[36px] flex items-center">
+          Utility
+        </button>
+        <button onclick="setCategory('Casual')" data-cat="Casual" class="cat-pill px-3 sm:px-3.5 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 transition-colors min-h-[36px] flex items-center">
+          Casual
+        </button>
+        <button onclick="setCategory('Tools')" data-cat="Tools" class="cat-pill px-3 sm:px-3.5 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 transition-colors min-h-[36px] flex items-center">
+          Tools
+        </button>
+      </div>
+
+      <!-- Sorting Selector -->
+      <div class="flex items-center justify-between sm:justify-end gap-2 text-xs text-slate-400">
+        <label for="sort-select" class="whitespace-nowrap flex items-center gap-1 font-medium text-slate-300 text-[11px] sm:text-xs">
+          <i data-lucide="sliders-horizontal" class="w-3.5 h-3.5 text-slate-400"></i> Sort:
+        </label>
+        <select 
+          id="sort-select" 
+          onchange="handleSort(this.value)"
+          class="bg-slate-900 border border-slate-800 rounded-lg px-2.5 py-1.5 text-xs text-slate-200 focus:outline-none focus:border-brand-600 cursor-pointer min-h-[36px]"
+        >
+          <option value="featured">Most Popular</option>
+          <option value="downloads">Highest Downloads</option>
+          <option value="rating">Top Rated (5.0)</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catalog Grid Container -->
+  <main id="mods-section" class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 pb-12">
+    
+    <!-- Empty Search State -->
+    <div id="empty-state" class="hidden text-center py-12 sm:py-16 bg-slate-900/40 rounded-xl border border-slate-800 px-4">
+      <div class="w-12 h-12 rounded-lg bg-slate-800 text-slate-400 flex items-center justify-center mx-auto mb-3">
+        <i data-lucide="search-x" class="w-6 h-6"></i>
+      </div>
+      <h3 class="text-base font-semibold text-white mb-1">No Matching Packages Found</h3>
+      <p class="text-xs text-slate-400 max-w-sm mx-auto mb-4">Please check your spelling or reset filters to view all available files.</p>
+      <button onclick="clearSearch()" class="px-4 py-2 bg-brand-600 text-white font-medium rounded-lg text-xs hover:bg-brand-500 transition-colors min-h-[40px]">
+        Reset Search & Filters
+      </button>
+    </div>
+
+    <!-- Active Mods Grid (1 col on mobile, 2 on sm, 3 on lg, 4 on xl) -->
+    <div id="mods-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5 sm:gap-4 md:gap-5">
+      <!-- Injected dynamically via JavaScript -->
+    </div>
+
+    <!-- ==================================================================== -->
+    <!-- 📢 HILLTOPADS SLOT 2: IN-CONTENT NATIVE AD BANNER (Fluid Responsive) -->
+    <!-- ==================================================================== -->
+    <div class="my-6 sm:my-10 p-3 sm:p-4 rounded-xl bg-slate-900 border border-slate-800 ad-pattern text-center">
+      <div class="flex items-center justify-between mb-2 text-[9px] sm:text-[10px] text-slate-500 uppercase tracking-wider font-mono px-1">
+        <span class="flex items-center gap-1.5"><i data-lucide="tag" class="w-3 h-3 text-slate-400"></i> HILLTOPADS NATIVE IN-FEED</span>
+        <span>Fluid Placement</span>
+      </div>
+
+      <div class="py-2.5 sm:py-3.5 px-3 sm:px-5 rounded-lg bg-slate-950 border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4 text-left">
+        <div class="flex items-center gap-3 w-full md:w-auto">
+          <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 flex items-center justify-center font-bold text-lg flex-shrink-0">
+            <i data-lucide="cloud" class="w-4 h-4 sm:w-5 sm:h-5 text-brand-500"></i>
+          </div>
+          <div class="min-w-0">
+            <h4 class="text-xs sm:text-sm font-semibold text-white truncate">Cloud Gaming Stream Engine - 120 FPS Mobile</h4>
+            <p class="text-[11px] sm:text-xs text-slate-400 line-clamp-1">Stream AAA PC games straight to Android with ultra low latency.</p>
+          </div>
+        </div>
+        <a 
+          href="javascript:void(0)" 
+          onclick="triggerHilltopDirectLink()" 
+          class="w-full md:w-auto text-center px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-750 text-slate-200 hover:text-white font-semibold text-xs transition-colors whitespace-nowrap border border-slate-700 min-h-[40px] flex items-center justify-center active:scale-95"
+        >
+          Explore Free &rarr;
+        </a>
+      </div>
+
+      <!-- HilltopAds In-Feed Native Ad Zone Code Placeholder -->
+      <!-- <div id="hilltopads_native_zone_XXXXX"></div> -->
+    </div>
+
+  </main>
+
+  <!-- Verification & Safety Info (Fully responsive columns) -->
+  <section class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 py-8 border-t border-slate-800">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5 sm:gap-4">
+      
+      <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800">
+        <div class="flex items-center gap-2 mb-1.5 text-slate-200 font-semibold text-xs sm:text-sm">
+          <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400 flex-shrink-0"></i> Rigorous Sandbox Analysis
+        </div>
+        <p class="text-[11px] sm:text-xs text-slate-400 leading-relaxed">
+          Packages undergo behavioral testing inside sandboxes to confirm no intrusive trojans or hidden permissions exist.
+        </p>
+      </div>
+
+      <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800">
+        <div class="flex items-center gap-2 mb-1.5 text-slate-200 font-semibold text-xs sm:text-sm">
+          <i data-lucide="hard-drive" class="w-4 h-4 text-brand-500 flex-shrink-0"></i> Redundant Mirror Delivery
+        </div>
+        <p class="text-[11px] sm:text-xs text-slate-400 leading-relaxed">
+          Downloads are mirrored across multi-region object storage networks ensuring uninterrupted speed and 99.9% uptime.
+        </p>
+      </div>
+
+      <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800">
+        <div class="flex items-center gap-2 mb-1.5 text-slate-200 font-semibold text-xs sm:text-sm">
+          <i data-lucide="file-text" class="w-4 h-4 text-slate-400 flex-shrink-0"></i> DMCA Safe Harbor Compliance
+        </div>
+        <p class="text-[11px] sm:text-xs text-slate-400 leading-relaxed">
+          Operates strictly under 17 U.S.C. § 512. Legitimate copyright holders can request rapid package removal anytime.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Download Modal with HilltopAds 300x250 Medium Rectangle Slot -->
+  <div id="download-modal" class="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-slate-950/85 backdrop-blur-sm hidden modal-backdrop">
+    <div class="relative w-full max-w-lg max-h-[92vh] overflow-y-auto rounded-t-2xl sm:rounded-2xl bg-slate-900 border border-slate-800 p-4 sm:p-6 shadow-2xl text-slate-200 overscroll-contain">
+      
+      <!-- Close button (Enlarged touch target) -->
+      <button onclick="closeDownloadModal()" class="absolute top-3 right-3 sm:top-4 sm:right-4 text-slate-400 hover:text-white p-2 rounded-lg bg-slate-800/80 transition-colors min-w-[36px] min-h-[36px] flex items-center justify-center" aria-label="Close modal">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+
+      <!-- Package Header Summary -->
+      <div class="flex items-start gap-3 mb-3.5 pr-8">
+        <div id="modal-mod-icon" class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-xl sm:text-2xl font-bold flex-shrink-0">
+          🔥
+        </div>
+        <div class="min-w-0">
+          <div class="flex items-center gap-1.5 flex-wrap">
+            <span id="modal-mod-category" class="px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 text-slate-300 border border-slate-700">Shooters</span>
+            <span id="modal-mod-version" class="text-[11px] font-mono text-slate-400">v2.109.1</span>
+          </div>
+          <h3 id="modal-mod-title" class="text-sm sm:text-base font-bold text-white mt-1 truncate">Free Fire MAX (Mod APK)</h3>
+          <p id="modal-mod-meta" class="text-[11px] sm:text-xs text-slate-400">560 MB • Android 7.0+ • 4.9 ★</p>
+        </div>
+      </div>
+
+      <!-- Security Status Badge -->
+      <div class="mb-3 p-2 sm:p-2.5 rounded-lg bg-emerald-950/30 border border-emerald-800/60 flex items-center justify-between text-[11px] sm:text-xs">
+        <div class="flex items-center gap-1.5 text-emerald-400 font-semibold truncate">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0"></i> VirusTotal Clean (0/68 Passed)
+        </div>
+        <span class="text-[9px] sm:text-[10px] text-emerald-400/80 font-mono flex-shrink-0">SHA-256</span>
+      </div>
+
+      <!-- Modded Features Overview -->
+      <div class="mb-3.5">
+        <h4 class="text-[11px] font-semibold text-slate-300 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+          <i data-lucide="sliders" class="w-3.5 h-3.5 text-brand-500"></i> Included Features:
+        </h4>
+        <div id="modal-mod-features" class="grid grid-cols-2 gap-1.5 text-[11px] sm:text-xs text-slate-300">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+
+      <!-- ==================================================================== -->
+      <!-- 📢 HILLTOPADS SLOT 3: HIGH-CTR MODAL RECTANGLE AD (300x250)         -->
+      <!-- Directly above the countdown button - Fits small screens cleanly    -->
+      <!-- ==================================================================== -->
+      <div class="my-3 p-2.5 sm:p-3 rounded-lg border border-slate-800 bg-slate-950 ad-pattern text-center">
+        <div class="flex items-center justify-between text-[9px] text-slate-500 uppercase tracking-wider font-mono mb-1.5">
+          <span>HILLTOPADS SPONSORED</span>
+          <span>300x250 Medium Rectangle</span>
+        </div>
+        
+        <!-- Clean Responsive Container for 300x250 Banner -->
+        <div class="mx-auto w-full max-w-[300px] min-h-[140px] sm:min-h-[160px] p-3 bg-slate-900 rounded-lg border border-slate-800 flex flex-col justify-between text-left">
+          <div>
+            <div class="flex items-center justify-between gap-1 mb-1">
+              <span class="text-xs font-semibold text-slate-200">Express Game Booster</span>
+              <span class="text-[9px] px-1.5 py-0.5 rounded bg-brand-600/20 text-brand-400 font-mono">PRO</span>
+            </div>
+            <p class="text-[11px] text-slate-400">Stabilize 90/120 FPS and suppress background ping fluctuations.</p>
+          </div>
+          <button 
+            onclick="triggerHilltopDirectLink()" 
+            class="w-full mt-2.5 py-2 bg-brand-600 hover:bg-brand-500 text-white text-xs font-semibold rounded-md transition-colors text-center active:scale-95"
+          >
+            Install Free
+          </button>
+        </div>
+        
+        <!-- HilltopAds 300x250 Script Placement Placeholder -->
+        <!-- <div id="hilltopads_modal_300x250_zone"></div> -->
+      </div>
+
+      <!-- Countdown Action & Download Trigger -->
+      <div id="download-actions" class="text-center pt-1">
+        
+        <!-- Trigger Button (Large touch target >= 48px) -->
+        <button 
+          id="start-timer-btn" 
+          onclick="startDownloadTimer()" 
+          class="w-full py-3.5 px-4 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs uppercase tracking-wider shadow-sm flex items-center justify-center gap-2 transition-colors min-h-[48px] active:scale-98"
+        >
+          <i data-lucide="download" class="w-4 h-4"></i> Generate High-Speed Mirror
+        </button>
+
+        <!-- Countdown Active Screen -->
+        <div id="timer-box" class="hidden py-1">
+          <div class="flex items-center justify-center gap-2 text-xs font-medium text-slate-300 mb-2">
+            <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+            Generating Direct Mirror: <span id="countdown-number" class="text-brand-500 font-mono text-base font-bold">5</span>s
+          </div>
+          <div class="w-full bg-slate-950 h-2 rounded-full overflow-hidden border border-slate-800">
+            <div id="timer-progress" class="bg-brand-600 h-full w-0 transition-all duration-1000 ease-linear"></div>
+          </div>
+          <p class="text-[10px] sm:text-[11px] text-slate-500 mt-2">Checking mirror integrity & decrypting secure download token...</p>
+        </div>
+
+        <!-- Download Buttons (Appears after 5s) -->
+        <div id="ready-download-box" class="hidden space-y-2 pt-1">
+          <a 
+            id="final-download-btn" 
+            href="#" 
+            target="_blank" 
+            class="w-full py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors shadow-sm min-h-[46px] active:scale-98"
+          >
+            <i data-lucide="download-cloud" class="w-4 h-4"></i>
+            <span>Download APK (Primary Mirror)</span>
+          </a>
+
+          <a 
+            id="mirror-download-btn" 
+            href="#" 
+            target="_blank" 
+            class="w-full py-2.5 px-4 rounded-xl bg-slate-800 hover:bg-slate-750 border border-slate-700 text-slate-300 text-xs font-medium flex items-center justify-center gap-2 transition-colors min-h-[42px] active:scale-98"
+          >
+            <i data-lucide="hard-drive" class="w-4 h-4 text-slate-400"></i> Backup Cloud Mirror
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================================================================== -->
+  <!-- 📢 HILLTOPADS SLOT 4: IN-PAGE PUSH (IPP) FLOATING NOTIFICATION BANNER-->
+  <!-- Modern high-CTR push notification style, mobile thumb-friendly       -->
+  <!-- ==================================================================== -->
+  <div 
+    id="hilltop-ipp-banner" 
+    class="fixed bottom-14 sm:bottom-16 right-2 sm:right-5 z-40 max-w-[340px] w-[calc(100%-1rem)] sm:w-auto bg-slate-900 border border-slate-700/90 rounded-xl p-3 shadow-2xl transition-all duration-300 transform translate-y-0"
+  >
+    <div class="flex items-start gap-3">
+      <div class="w-10 h-10 rounded-lg bg-brand-600/20 border border-brand-500/30 text-brand-400 flex items-center justify-center flex-shrink-0 text-lg">
+        ⚡
+      </div>
+      <div class="flex-1 min-w-0 pr-4">
+        <div class="flex items-center gap-1.5">
+          <span class="text-[9px] font-mono text-slate-400 uppercase">UPDATE AVAILABLE</span>
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+        </div>
+        <h5 class="text-xs font-bold text-white truncate mt-0.5">Free Fire MAX v2.109.1 Patch</h5>
+        <p class="text-[11px] text-slate-400 line-clamp-1">New anti-ban bypass scripts available now.</p>
+        <div class="mt-2 flex items-center gap-2">
+          <button 
+            onclick="triggerHilltopDirectLink()" 
+            class="px-2.5 py-1 rounded bg-brand-600 hover:bg-brand-500 text-white text-[11px] font-semibold transition-colors"
+          >
+            Update Now
+          </button>
+          <button 
+            onclick="dismissIppBanner()" 
+            class="text-[11px] text-slate-400 hover:text-slate-200 py-1 px-1.5"
+          >
+            Later
+          </button>
+        </div>
+      </div>
+      <button 
+        onclick="dismissIppBanner()" 
+        class="text-slate-500 hover:text-slate-300 p-1 rounded transition-colors absolute top-2 right-2"
+        aria-label="Dismiss notification"
+      >
+        <i data-lucide="x" class="w-3.5 h-3.5"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- ==================================================================== -->
+  <!-- 📢 HILLTOPADS SLOT 5: STICKY BOTTOM BANNER (Mobile 320x50 / Fluid)   -->
+  <!-- Anchored to bottom viewport with clear dismiss toggle               -->
+  <!-- ==================================================================== -->
+  <aside id="sticky-bottom-ad" class="fixed bottom-0 inset-x-0 z-40 bg-slate-900/95 border-t border-slate-800 backdrop-blur-md px-3 py-2 flex items-center justify-center transition-all duration-300">
+    <div class="relative w-full max-w-4xl flex items-center justify-between gap-2">
+      
+      <div class="hidden xs:flex items-center gap-1 text-[8px] sm:text-[9px] uppercase font-mono text-slate-500 flex-shrink-0">
+        <span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
+        AD
+      </div>
+
+      <div class="flex-1 flex items-center justify-center text-center min-w-0 px-1">
+        <a 
+          href="javascript:void(0)" 
+          onclick="triggerHilltopDirectLink()" 
+          class="group flex items-center gap-1.5 text-slate-300 hover:text-white transition-colors truncate"
+        >
+          <span class="px-1.5 py-0.5 rounded bg-brand-600/20 text-brand-400 font-semibold text-[9px] border border-brand-500/30 flex-shrink-0">PROMO</span>
+          <span class="font-medium text-[11px] sm:text-xs truncate">🔥 Zero-Lag High FPS Cloud Booster: Free Trial</span>
+          <i data-lucide="arrow-right" class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-slate-400 flex-shrink-0 group-hover:translate-x-0.5 transition-transform"></i>
+        </a>
+      </div>
+
+      <button 
+        onclick="dismissBottomAd()" 
+        class="text-slate-500 hover:text-slate-300 p-1 rounded hover:bg-slate-800 transition-colors flex-shrink-0 min-w-[28px] min-h-[28px] flex items-center justify-center"
+        title="Dismiss ad banner"
+        aria-label="Close ad"
+      >
+        <i data-lucide="x" class="w-3.5 h-3.5"></i>
+      </button>
+
+    </div>
+  </aside>
+
+  <!-- DMCA Modal -->
+  <div id="dmca-modal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/85 backdrop-blur-sm hidden modal-backdrop">
+    <div class="relative w-full max-w-lg rounded-xl bg-slate-900 border border-slate-800 p-4 sm:p-6 shadow-2xl text-slate-200">
+      <button onclick="closeDmcaModal()" class="absolute top-3.5 right-3.5 text-slate-400 hover:text-white p-1 rounded-lg bg-slate-800/80 transition-colors">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+
+      <div class="flex items-center gap-2 mb-3 text-slate-100 font-bold text-sm sm:text-base">
+        <i data-lucide="scale" class="w-4 h-4 sm:w-5 sm:h-5 text-brand-500"></i> DMCA Safe Harbor & Copyright Policy
+      </div>
+
+      <div class="text-[11px] sm:text-xs text-slate-300 space-y-2.5 leading-relaxed max-h-[60vh] overflow-y-auto pr-1">
+        <p>
+          <strong>NexusMods Hub</strong> operates in compliance with 17 U.S.C. § 512 and the Digital Millennium Copyright Act ("DMCA"). All packages indexed on this repository are stored on distributed community mirrors.
+        </p>
+        <div class="p-3 bg-slate-950 rounded-lg border border-slate-800 text-slate-400 space-y-1">
+          <p class="font-semibold text-slate-200">To submit a takedown request:</p>
+          <p>Email notice with exact URL and proof of ownership to: <span class="text-brand-500 font-mono">dmca-agent@nexusmodshub.net</span></p>
+        </div>
+        <p class="text-slate-400">All verifiable claims are acted upon within 24 to 48 business hours.</p>
+      </div>
+
+      <div class="mt-4 text-right">
+        <button onclick="closeDmcaModal()" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold rounded-lg border border-slate-700 transition-colors min-h-[38px]">
+          Close Policy
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer (Mobile Stacked, Desktop Columns) -->
+  <footer class="relative z-30 border-t border-slate-800 bg-slate-900/80 pt-8 pb-16 text-slate-400 text-xs">
+    <div class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-6">
+        
+        <div class="space-y-2">
+          <div class="flex items-center space-x-2">
+            <div class="w-6 h-6 rounded bg-brand-600 text-white flex items-center justify-center text-xs font-bold">
+              <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+            </div>
+            <span class="font-bold text-sm text-white">Nexus<span class="text-brand-500">Mods</span> Hub</span>
+          </div>
+          <p class="text-slate-400 text-[11px] leading-relaxed">
+            Community catalog providing pre-audited Android APK files and software builds for testing and performance enhancement.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-slate-200 uppercase text-[11px] tracking-wider mb-2.5">Categories</h4>
+          <ul class="space-y-1.5 text-[11px] text-slate-400">
+            <li><button onclick="setCategory('Shooters')" class="hover:text-slate-200">Shooters & FPS</button></li>
+            <li><button onclick="setCategory('Action')" class="hover:text-slate-200">Action & Adventure</button></li>
+            <li><button onclick="setCategory('Utility')" class="hover:text-slate-200">Utility & Media</button></li>
+            <li><button onclick="setCategory('Tools')" class="hover:text-slate-200">Photo & System Tools</button></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-slate-200 uppercase text-[11px] tracking-wider mb-2.5">Legal & Security</h4>
+          <ul class="space-y-1.5 text-[11px] text-slate-400">
+            <li><button onclick="openDmcaModal()" class="hover:text-slate-200">DMCA Disclaimer</button></li>
+            <li><a href="#" class="hover:text-slate-200">Privacy Notice</a></li>
+            <li><a href="#" class="hover:text-slate-200">Terms of Service</a></li>
+            <li><a href="#" class="hover:text-slate-200">Security Reports</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-slate-200 uppercase text-[11px] tracking-wider mb-2.5">Advertising</h4>
+          <p class="text-[11px] text-slate-400 leading-relaxed mb-2">
+            High-viewability direct placements and CPA/CPM integrations available.
+          </p>
+          <a href="mailto:ads@nexusmodshub.net" class="inline-flex items-center gap-1.5 text-brand-500 font-semibold hover:underline text-[11px]">
+            <i data-lucide="mail" class="w-3.5 h-3.5"></i> ads@nexusmodshub.net
+          </a>
+        </div>
+
+      </div>
+
+      <div class="pt-4 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-slate-500 text-[10px] sm:text-[11px] gap-2 text-center sm:text-left">
+        <p>&copy; 2026 NexusMods Hub. All product names, logos, and brands are property of their respective owners.</p>
+        <p>Enterprise Infrastructure • 0 Malicious Scripts</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-20 left-1/2 -translate-x-1/2 sm:left-auto sm:right-4 sm:translate-x-0 z-50 transform translate-y-10 opacity-0 pointer-events-none transition-all duration-300 flex items-center gap-2 px-3.5 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-slate-200 text-xs shadow-xl whitespace-nowrap">
+    <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 flex-shrink-0"></i>
+    <span id="toast-message">Action processed</span>
+  </div>
+
+  <script>
+    /* ==================================================================== */
+    /* 📢 HILLTOPADS DIRECT LINK / SMARTLINK CONFIGURATION                  */
+    /* Replace with your active HilltopAds Direct Link URL from Dashboard   */
+    /* ==================================================================== */
+    const HILLTOP_DIRECT_LINK_URL = "https://example-hilltopads-directlink.com/click";
+
+    function triggerHilltopDirectLink() {
+      // Opens HilltopAds SmartLink / Direct Link in new tab without interrupting flow
+      window.open(HILLTOP_DIRECT_LINK_URL, "_blank", "noopener,noreferrer");
+    }
+
+    /* Database - Free Fire MAX fixed at first position */
+    const MODS_DATABASE = [
+      {
+        id: "mod-ff-max",
+        title: "Free Fire MAX (Mod APK)",
+        category: "Shooters",
+        version: "v2.109.1",
+        size: "560 MB",
+        downloads: "4.8M",
+        rating: "4.9",
+        icon: "🔥",
+        features: ["Auto Aim Lock", "ESP Player Distance", "No Recoil Script", "HD Visual Pack"],
+        downloadUrl: "https://example.com/download/free-fire-max.apk",
+        badge: "POPULAR"
+      },
+      {
+        id: "mod-gta-sa",
+        title: "Grand Theft Auto: San Andreas Remastered",
+        category: "Action",
+        version: "v2.11.2",
+        size: "1.9 GB",
+        downloads: "1.2M",
+        rating: "4.8",
+        icon: "🚗",
+        features: ["Unlimited Cash", "Cleo Cheats Menu", "60 FPS Unlocked", "HD Textures"],
+        downloadUrl: "https://example.com/download/gta-sa-cleo.apk",
+        badge: "VERIFIED"
+      },
+      {
+        id: "mod-spotify",
+        title: "Spotify Music Pro (No Audio Ads)",
+        category: "Utility",
+        version: "v8.9.74",
+        size: "58 MB",
+        downloads: "3.4M",
+        rating: "4.9",
+        icon: "🎵",
+        features: ["Zero Audio Ads", "Unlimited Skips", "Very High 320kbps", "Seeking Unlocked"],
+        downloadUrl: "https://example.com/download/spotify-premium.apk",
+        badge: "VERIFIED"
+      },
+      {
+        id: "mod-subway",
+        title: "Subway Surfers World Tour VIP",
+        category: "Casual",
+        version: "v3.29.1",
+        size: "135 MB",
+        downloads: "3.2M",
+        rating: "4.8",
+        icon: "🏄",
+        features: ["Unlimited Coins", "Infinite Keys", "Mega High Jump", "All Characters"],
+        downloadUrl: "https://example.com/download/subway-surfers-mod.apk",
+        badge: "POPULAR"
+      },
+      {
+        id: "mod-minecraft",
+        title: "Minecraft Bedrock Edition",
+        category: "Action",
+        version: "v1.21.30",
+        size: "240 MB",
+        downloads: "2.1M",
+        rating: "4.9",
+        icon: "⛏️",
+        features: ["God Mode", "All Skins Unlocked", "Custom Shaders", "No Damage"],
+        downloadUrl: "https://example.com/download/minecraft-mod.apk",
+        badge: "FEATURED"
+      },
+      {
+        id: "mod-capcut",
+        title: "CapCut Pro Video Editor (VIP)",
+        category: "Tools",
+        version: "v12.2.0",
+        size: "112 MB",
+        downloads: "1.6M",
+        rating: "4.9",
+        icon: "✂️",
+        features: ["No Watermark", "VIP 4K Filters", "3D Zoom Pro", "All Transitions Free"],
+        downloadUrl: "https://example.com/download/capcut-pro.apk",
+        badge: "PRO"
+      },
+      {
+        id: "mod-asphalt",
+        title: "Asphalt 9: Legends Nitro Master",
+        category: "Action",
+        version: "v4.5.0a",
+        size: "2.1 GB",
+        downloads: "890K",
+        rating: "4.7",
+        icon: "🏎️",
+        features: ["Unlimited Nitro", "Speed Hack", "All Supercars Unlocked", "Ghost Mode"],
+        downloadUrl: "https://example.com/download/asphalt9-nitro.apk",
+        badge: "UPDATE"
+      },
+      {
+        id: "mod-lightroom",
+        title: "Adobe Lightroom CC Premium Presets",
+        category: "Tools",
+        version: "v9.3.1",
+        size: "94 MB",
+        downloads: "940K",
+        rating: "4.9",
+        icon: "📸",
+        features: ["All Pro Presets", "RAW DNG Export", "Selective Editing", "No Login Needed"],
+        downloadUrl: "https://example.com/download/lightroom-pro.apk",
+        badge: "PRO"
+      }
+    ];
+
+    /* Application State */
+    let currentCategory = 'all';
+    let searchQuery = '';
+    let currentSort = 'featured';
+    let activeModalMod = null;
+    let timerInterval = null;
+    let allMods = [...MODS_DATABASE];
+
+    function renderMods() {
+      const grid = document.getElementById('mods-grid');
+      const emptyState = document.getElementById('empty-state');
+      
+      // Filter logic
+      let filtered = allMods.filter(mod => {
+        const matchesCategory = currentCategory === 'all' || mod.category.toLowerCase() === currentCategory.toLowerCase();
+        const matchesSearch = mod.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                              mod.features.some(f => f.toLowerCase().includes(searchQuery.toLowerCase())) ||
+                              mod.category.toLowerCase().includes(searchQuery.toLowerCase());
+        return matchesCategory && matchesSearch;
+      });
+
+      // Sorting logic
+      if (currentSort === 'downloads') {
+        filtered.sort((a, b) => (parseFloat(b.downloads) || 0) - (parseFloat(a.downloads) || 0));
+      } else if (currentSort === 'rating') {
+        filtered.sort((a, b) => parseFloat(b.rating) - parseFloat(a.rating));
+      }
+
+      // Update Counts
+      const countEl = document.getElementById('count-all');
+      if (countEl) countEl.innerText = allMods.length;
+
+      // Render cards
+      if (filtered.length === 0) {
+        grid.innerHTML = '';
+        emptyState.classList.remove('hidden');
+      } else {
+        emptyState.classList.add('hidden');
+        grid.innerHTML = filtered.map(mod => createModCardHTML(mod)).join('');
+      }
+
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    }
+
+    function createModCardHTML(mod) {
+      const badgeStyles = {
+        'POPULAR': 'bg-slate-800 text-slate-300 border-slate-700',
+        'VERIFIED': 'bg-emerald-950/60 text-emerald-400 border-emerald-800/80',
+        'FEATURED': 'bg-brand-600/10 text-brand-400 border-brand-500/20',
+        'PRO': 'bg-slate-800 text-slate-200 border-slate-700',
+        'UPDATE': 'bg-slate-800 text-slate-300 border-slate-700'
+      };
+      
+      const badgeClass = badgeStyles[mod.badge] || 'bg-slate-800 text-slate-300 border-slate-700';
+
+      return `
+        <div class="group rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-700 p-3.5 sm:p-4 md:p-5 flex flex-col justify-between transition-colors shadow-sm">
+          <div>
+            <!-- Card Header -->
+            <div class="flex items-start justify-between gap-2.5 mb-2.5">
+              <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-slate-950 border border-slate-800 flex items-center justify-center text-lg sm:text-xl flex-shrink-0">
+                ${mod.icon || '📦'}
+              </div>
+              <div class="flex flex-col items-end">
+                <span class="text-[9px] sm:text-[10px] font-semibold tracking-wide px-2 py-0.5 rounded border ${badgeClass}">
+                  ${mod.badge || 'MOD'}
+                </span>
+                <span class="text-[9px] sm:text-[10px] font-mono text-slate-500 mt-0.5">${mod.version}</span>
+              </div>
+            </div>
+
+            <!-- Title -->
+            <h3 class="font-bold text-xs sm:text-sm text-slate-100 group-hover:text-brand-500 transition-colors line-clamp-1 mb-0.5">
+              ${mod.title}
+            </h3>
+
+            <!-- Category -->
+            <p class="text-[11px] text-slate-400 mb-2.5 font-medium">${mod.category}</p>
+
+            <!-- Feature Pills -->
+            <div class="flex flex-wrap gap-1 mb-3">
+              ${mod.features.slice(0, 3).map(feat => `
+                <span class="inline-flex items-center text-[9px] sm:text-[10px] font-medium px-1.5 py-0.5 rounded bg-slate-950 text-slate-300 border border-slate-800/80">
+                  <i data-lucide="check" class="w-2.5 h-2.5 text-emerald-400 mr-1 flex-shrink-0"></i> ${feat}
+                </span>
+              `).join('')}
+              ${mod.features.length > 3 ? `<span class="text-[9px] text-slate-500 self-center">+${mod.features.length - 3}</span>` : ''}
+            </div>
+          </div>
+
+          <!-- Bottom Card Meta & Download CTA -->
+          <div>
+            <div class="flex items-center justify-between text-[10px] sm:text-[11px] text-slate-400 pt-2.5 border-t border-slate-800 mb-2.5">
+              <span class="flex items-center gap-1"><i data-lucide="hard-drive" class="w-3 h-3 text-slate-500"></i> ${mod.size}</span>
+              <span class="flex items-center gap-1"><i data-lucide="download" class="w-3 h-3 text-slate-500"></i> ${mod.downloads}</span>
+              <span class="flex items-center gap-1 font-semibold text-slate-200"><i data-lucide="star" class="w-3 h-3 fill-amber-400 text-amber-400"></i> ${mod.rating}</span>
+            </div>
+
+            <button 
+              onclick="openDownloadModal('${mod.id}')"
+              class="w-full py-2.5 px-3 rounded-lg bg-slate-800 hover:bg-brand-600 text-slate-200 hover:text-white font-semibold text-xs transition-colors flex items-center justify-center gap-1.5 border border-slate-700 hover:border-brand-600 min-h-[40px] active:scale-98"
+            >
+              <i data-lucide="download" class="w-3.5 h-3.5"></i>
+              <span>Get Mod</span>
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    function handleSearch(val) {
+      searchQuery = val;
+      const desk = document.getElementById('desktop-search-input');
+      const mob = document.getElementById('mobile-search-input');
+      const clearDesk = document.getElementById('clear-search-btn-desk');
+      const clearMob = document.getElementById('clear-search-btn-mob');
+
+      if (desk && desk.value !== val) desk.value = val;
+      if (mob && mob.value !== val) mob.value = val;
+
+      const hasText = val.trim().length > 0;
+      if (clearDesk) clearDesk.classList.toggle('hidden', !hasText);
+      if (clearMob) clearMob.classList.toggle('hidden', !hasText);
+
+      renderMods();
+    }
+
+    function clearSearch() {
+      handleSearch('');
+      setCategory('all');
+    }
+
+    function setCategory(cat) {
+      currentCategory = cat;
+      const pills = document.querySelectorAll('.cat-pill');
+      pills.forEach(pill => {
+        if (pill.getAttribute('data-cat') === cat) {
+          pill.className = 'cat-pill active px-3 sm:px-3.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap bg-brand-600 text-white transition-colors min-h-[36px] flex items-center';
+        } else {
+          pill.className = 'cat-pill px-3 sm:px-3.5 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 transition-colors min-h-[36px] flex items-center';
+        }
+      });
+      renderMods();
+    }
+
+    function handleSort(val) {
+      currentSort = val;
+      renderMods();
+    }
+
+    function scrollToMods() {
+      const el = document.getElementById('mods-section');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function openDownloadModal(modId) {
+      const mod = allMods.find(m => m.id === modId);
+      if (!mod) return;
+      activeModalMod = mod;
+
+      document.getElementById('modal-mod-icon').innerText = mod.icon || '🔥';
+      document.getElementById('modal-mod-category').innerText = mod.category;
+      document.getElementById('modal-mod-version').innerText = mod.version;
+      document.getElementById('modal-mod-title').innerText = mod.title;
+      document.getElementById('modal-mod-meta').innerText = `${mod.size} • Android 7.0+ • ${mod.rating} ★`;
+
+      const featsContainer = document.getElementById('modal-mod-features');
+      featsContainer.innerHTML = mod.features.map(f => `
+        <div class="flex items-center gap-1.5 bg-slate-950 p-1.5 sm:p-2 rounded-lg border border-slate-800">
+          <i data-lucide="check" class="w-3 h-3 text-emerald-400 flex-shrink-0"></i>
+          <span class="truncate">${f}</span>
+        </div>
+      `).join('');
+
+      // Reset modal UI
+      document.getElementById('start-timer-btn').classList.remove('hidden');
+      document.getElementById('timer-box').classList.add('hidden');
+      document.getElementById('ready-download-box').classList.add('hidden');
+      
+      const modal = document.getElementById('download-modal');
+      modal.classList.remove('hidden');
+
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function closeDownloadModal() {
+      document.getElementById('download-modal').classList.add('hidden');
+      if (timerInterval) clearInterval(timerInterval);
+    }
+
+    function startDownloadTimer() {
+      const startBtn = document.getElementById('start-timer-btn');
+      const timerBox = document.getElementById('timer-box');
+      const readyBox = document.getElementById('ready-download-box');
+      const countdownEl = document.getElementById('countdown-number');
+      const progressBar = document.getElementById('timer-progress');
+
+      startBtn.classList.add('hidden');
+      timerBox.classList.remove('hidden');
+
+      let secondsLeft = 5;
+      countdownEl.innerText = secondsLeft;
+      progressBar.style.width = '0%';
+
+      setTimeout(() => {
+        progressBar.style.width = '100%';
+      }, 50);
+
+      timerInterval = setInterval(() => {
+        secondsLeft--;
+        countdownEl.innerText = secondsLeft;
+
+        if (secondsLeft <= 0) {
+          clearInterval(timerInterval);
+          timerBox.classList.add('hidden');
+          readyBox.classList.remove('hidden');
+
+          const finalBtn = document.getElementById('final-download-btn');
+          const mirrorBtn = document.getElementById('mirror-download-btn');
+
+          const targetUrl = activeModalMod ? activeModalMod.downloadUrl : '#';
+          finalBtn.href = targetUrl;
+          mirrorBtn.href = targetUrl;
+
+          showToast("High-speed CDN direct link decrypted.");
+        }
+      }, 1000);
+    }
+
+    function dismissIppBanner() {
+      const ipp = document.getElementById('hilltop-ipp-banner');
+      if (ipp) {
+        ipp.style.opacity = '0';
+        ipp.style.transform = 'translateY(20px)';
+        setTimeout(() => ipp.remove(), 250);
+      }
+    }
+
+    function dismissBottomAd() {
+      const ad = document.getElementById('sticky-bottom-ad');
+      if (ad) {
+        ad.style.transform = 'translateY(100%)';
+        setTimeout(() => ad.remove(), 250);
+      }
+    }
+
+    function openDmcaModal() {
+      document.getElementById('dmca-modal').classList.remove('hidden');
+    }
+    function closeDmcaModal() {
+      document.getElementById('dmca-modal').classList.add('hidden');
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const msg = document.getElementById('toast-message');
+      msg.innerText = message;
+      toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-10');
+      toast.classList.add('opacity-100', 'translate-y-0');
+
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-10');
+        toast.classList.remove('opacity-100', 'translate-y-0');
+      }, 3000);
+    }
+
+    // Keyboard support
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeDownloadModal();
+        closeDmcaModal();
+      }
+    });
+
+    // Bootstrapping on DOM Load
+    window.addEventListener('DOMContentLoaded', () => {
+      renderMods();
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    });
+  </script>
+</body>
+</html>
